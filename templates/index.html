@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f8f8f8;
+    }
+    form {
+      margin-bottom: 2rem;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+    }
+    pre {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>Email Generator with Gemini</h1>
+  <form method="POST">
+    <label for="email_type">What kind of email do you want?</label><br>
+    <input type="text" name="email_type" placeholder="e.g. Follow-up after interview, Apology email, Resignation due to relocation" required>
+    <br>
+    <button type="submit">Generate Email</button>
+  </form>
+
+  {% if email_output %}
+    <h2>Generated Email:</h2>
+    <pre>{{ email_output }}</pre>
+  {% endif %}
+</body>
+</html>
+
